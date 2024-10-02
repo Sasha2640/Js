@@ -90,6 +90,62 @@ hotelThis.showName(); // Resort Hotel
 hotelThis.changeCapacity(200);
 console.log(hotelThis.capacity); // 200
 
+// Перебор обьектів for...in ==========================================
+// Синтаксис for (key in object) {тіло for-y}
+// перебираю ключі обьекта / можно видалити вла-ті в часі перебора
+// не використовувати для масивів
+
+const resortH = {
+  name: "Hotel",
+  stars: 5,
+  capacity: 100,
+};
+// for (const key in resortH) {
+//   console.log("key: ", resortH[key]);
+// }
+
+// Object.keys() / Object.values() / Object.entries() =============
+
+// Object.keys(obj) - поверне массив з ключами обьекта в вигляді рядків
+// Object.values(obj) - поверне массив з значеннями властивостей обьекта
+// Object.entries(obj) - поверне массив з записами обьекта, в якому буде миссив з 2 елементів ключ + значення
+
+// const keys = Object.keys(resortH);
+// console.log("🚀 ~ keys:", keys);
+// for (const key of keys) {
+//   console.log("Value: ", resortH[key]);
+// }
+// const values = Object.values(resortH);
+// console.log("🚀 ~ values:", values);
+// const entries = Object.entries(resortH);
+// console.log("🚀 ~ entries:", entries);
+
+// for (const entry of entries) {
+//   const key = entry[0];
+//   const value = entry[1];
+
+//   console.log(`${key}: ${value}`);
+// }
+
+// const eats = {
+//   apple: 6,
+//   bread: 4,
+//   cheese: 5,
+//   pizza: 7,
+// };
+// + дістати всі значення, values()
+// - додати всі значення через  for...of в total
+
+// let total = 0;
+
+// const valuesEats = Object.values(eats);
+// console.log("🚀 ~ valuesEats:", valuesEats);
+
+// for (const valueEat of valuesEats) {
+//   total += valueEat;
+// }
+// console.log(total);
+
 //TODO: № 1 ==============================================================
 // Напиши скрипт, який для об'єкта user,
 // Послідовно:
@@ -98,30 +154,30 @@ console.log(hotelThis.capacity); // 200
 // 3. замінити значення premium на false
 // 4. виводити зміст об'єкта user у console.log()
 
-const user = {
-  name: "John",
-  age: 20,
-  hobby: "tenis",
-  premium: true,
-};
-user.mood = "happy";
-user.hobby = "skydiving";
-user.premium = "false";
-console.log(user);
-// Описати: IT - компанію;
-// Продукт;
-const ItCompany = {
-  name: "Prikarpatye",
-  clents: 56,
-  employents: 10,
-  tasks: 21,
-  profit: "100500 deneg",
-};
-console.log(ItCompany);
-const product = {
-  name: "mango",
-  weigth: "500gram",
-  calories: "150cal",
-  price: "2$",
-};
-console.log(product);
+// const user = {
+//   name: "John",
+//   age: 20,
+//   hobby: "tenis",
+//   premium: true,
+// };
+// user.mood = "happy";
+// user.hobby = "skydiving";
+// user.premium = false;
+// console.log(user);
+// // Описати: IT - компанію;
+// // Продукт;
+// const ItCompany = {
+//   name: "Prikarpatye",
+//   clents: 56,
+//   employents: 10,
+//   tasks: 21,
+//   profit: "100500 deneg",
+// };
+// console.log(ItCompany);
+// const product = {
+//   name: "mango",
+//   weigth: 500,
+//   calories: 150,
+//   price: 2,
+// };
+// console.log(product);
