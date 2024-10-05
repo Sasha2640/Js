@@ -5,11 +5,11 @@
 //greet(name) - коллбек, що приймає ім'я і логірує в консоль
 //Рядок "Привіт <name>"
 //Реалізуй перевірку, що prompt не порожній  **
-//?---------------------------------------------------------
+//---------------------------------------------------------
 // -Перевірка чи промпт не порожній
 //     - Передання в колбек
 //     - виведення повідомлення
-//?---------------------------------------------------------
+// ---------------------------------------------------------
 function letMeSeeYourName(callback) {
   //   const name = prompt("Ведіть ваше імя");
   //while (name === " ") {
@@ -72,17 +72,24 @@ const profile = {
   username: "Jacob",
   playTime: 300,
 };
-// function changeUserName(newName) {
-//   let promptName = prompt("Введіть нове імя!");
-//   console.log(promptName);
-
-// let profile {username: newName};
-// }
+function changeUserName() {
+  let promptName = prompt("Ведіть нове імя!");
+  this.username = promptName;
+  return promptName;
+}
+function updatePlayTime(hours) {
+  let promptTime = prompt("Ведіть ігровий час!");
+  this.playTime += propmptTime;
+}
+function getInfo() {
+  return `${this.username} has ${this.playTime} active hours!`;
+}
 
 // console.log(profile.getInfo()); // "Jacob has 300 active hours!"
 
-// profile.changeUsername("Marco");
-// console.log(profile.getInfo()); // "Marco has 300 active hours!"
+console.log(changeUserName("Marco"));
+
+console.log(profile.getInfo()); // "Marco has 300 active hours!"
 
 // profile.updatePlayTime(20);
 // console.log(profile.getInfo()); // "Marco has 320 active hours!"
@@ -101,13 +108,15 @@ const profile = {
 // Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль будуть виведені результати її викликів.
 function isEnoughCapacity(products, containerSize) {
   let values = Object.values(products);
-  let counter = values[0] + values[1] + values[2];
-  if (counter <= containerSize) {
-    console.log("Вантаж поміститься!");
-  } else {
-    console.log("Вантаж не поміститься!");
+  let sumProducts = 0;
+  for (const value of values) {
+    sumProducts += value;
   }
-  return counter;
+  if (sumProducts <= containerSize) {
+    return "Вантаж поміститься!";
+  } else {
+    return "Вантаж не поміститься!";
+  }
 }
 
 console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)); // true
@@ -117,3 +126,15 @@ console.log(isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)); // false
 console.log(isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)); // true
 
 console.log(isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)); // false
+
+//TODO: на замикання ✅ ==============================================
+//Напишіть функцію makeCounter, яка повертає іншу
+//функцію, яка вважає та логує кількість своїх викликів
+function makeCounter() {}
+let count = 0;
+return function () {
+  count += 1;
+  console.log("Counter : ${count}");
+};
+let counter = makeCounter();
+counter();
