@@ -69,30 +69,29 @@ function showProduct(product) {
 // Метод getInfo() має повертати рядок формату <Username> has <amount> active hours!, де <Username> — це ім’я профілю, а <amount> — кількість ігрових годин.
 // Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль будуть виведені результати її роботи.
 const profile = {
-  username: "Jacob",
+  userName: "Jacob",
   playTime: 300,
+  changeUserName(newName) {
+    // let promptName = prompt("Ведіть нове імя!");
+    this.userName = newName;
+  },
+  updatePlayTime(hours) {
+    // let promptTime = prompt("Ведіть ігровий час!");
+    this.playTime += hours;
+  },
+  getInfo() {
+    return `${this.userName} has ${this.playTime} active hours!`;
+  },
 };
-function changeUserName() {
-  let promptName = prompt("Ведіть нове імя!");
-  this.username = promptName;
-  return promptName;
-}
-function updatePlayTime(hours) {
-  let promptTime = prompt("Ведіть ігровий час!");
-  this.playTime += propmptTime;
-}
-function getInfo() {
-  return `${this.username} has ${this.playTime} active hours!`;
-}
 
-// console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+console.log(profile.getInfo()); // "Jacob has 300 active hours!"
 
-console.log(changeUserName("Marco"));
+console.log(profile.changeUserName("Marco"));
 
 console.log(profile.getInfo()); // "Marco has 300 active hours!"
 
-// profile.updatePlayTime(20);
-// console.log(profile.getInfo()); // "Marco has 320 active hours!"
+profile.updatePlayTime(20);
+console.log(profile.getInfo()); // "Marco has 320 active hours!"
 //?--------------------------------------------------------- Задача 1. Пакування товарів ---------------------------------------------------------
 
 // Напиши функцію isEnoughCapacity(products, containerSize), яка обчислює, чи помістяться всі товари в контейнер при пакуванні.
@@ -130,11 +129,18 @@ console.log(isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)); // fa
 //TODO: на замикання ✅ ==============================================
 //Напишіть функцію makeCounter, яка повертає іншу
 //функцію, яка вважає та логує кількість своїх викликів
-function makeCounter() {}
-let count = 0;
-return function () {
-  count += 1;
-  console.log("Counter : ${count}");
-};
-let counter = makeCounter();
+function makeCounter() {
+  let count = 0;
+  return function () {
+    count += 1;
+    console.log(`Counter : ${count}`);
+  };
+}
+const counter = makeCounter();
+counter();
+counter();
+counter();
+counter();
+counter();
+counter();
 counter();

@@ -64,3 +64,58 @@ function thisThis(callback) {
 
 // ! Передається посилання на функцію, а ні її виклик
 thisThis(hotel.showName);
+
+// ? this в стрілочних функціях
+
+// * Контекст всередині стрілки виявляєтся місцем її оголошення,
+// * а ні викликом та посилається на контекст батьківскої функції
+
+const showThisArrow = () => {
+  console.log("this in showThis", this);
+};
+showThisArrow(); // ! undefined
+
+// ?  Методи функцій call, apply, bind
+//* call / apply - привязка фугкції як методом до обьекта
+
+function greet() {
+  return `Welcome to ${this.name} hotel`;
+}
+const hotelVasya = { name: "Vasya Best" };
+const hotelPetya = { name: "Petya the Best" };
+
+console.log(greet.call(hotelVasya));
+console.log(greet.apply(hotelPetya));
+
+// ? call і аргументи (виуликає функцію fn  передав до неї this
+// ?  посилання на обьект obj , і аргументи які треба)
+// ? call синтаксис.  fn.call(obj, agr1, agr2, ....)
+
+function greetCall(guest, stars) {
+  return `${guest}, welcome to ${stars}-star ${this.name}`;
+}
+
+const hotelCall = { name: "Taras hotel" };
+
+console.log(greetCall.call(hotelCall, "Qqweqwe", 5));
+
+// ? apply і аргументи (не буде перечислення аршументів,
+// ? а передається масив)
+// ? apply синтаксис.  fn.apply(obj, [agr1, agr2, ....])
+
+function greetApply(guest, stars) {
+  return `${guest}, welcome to ${stars}-star ${this.name}`;
+}
+
+const hotelApply = { name: "Ivan hotel" };
+
+console.log(greetApply.apply(hotelApply, ["Qqweqwe", 5]));
+
+// ? bind і аргументи ()
+// ? bind синтаксис.  fn.bind(obj, agr1, agr2, ....)
+function greetBind() {
+  return `Welcome to ${this.name} hotel`;
+}
+const hotelBind = { name: "Bind Best" };
+
+console.log(greetBind.bind(hotelVasya));
