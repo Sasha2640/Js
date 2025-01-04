@@ -119,3 +119,19 @@ function greetBind() {
 const hotelBind = { name: "Bind Best" };
 
 console.log(greetBind.bind(hotelVasya));
+
+// ? частіще використовують bind для привязки контекста при передачі методів
+// ? обьекта як фуекції зворотнього виклику
+
+const hotelBind2 = {
+  name: "Bind-hotel",
+  showThisBind() {
+    console.log(this);
+  },
+};
+function fnBind(callback) {
+  callback();
+}
+
+fn(hotelBind2.showThisBind.bind(hotelBind2));
+console.log(fnBind(hotelBind2.showThisBind.bind(hotelBind2)));

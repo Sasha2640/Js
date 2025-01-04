@@ -144,3 +144,41 @@ counter();
 counter();
 counter();
 counter();
+//TODO:  на замикання ✅ ==============================================
+//Напишіть функцію savePassword(password), яка приймає
+//пароль і повертає внутрішню функцію, що приймає
+//рядок і повертає буль true, якщо рядок збігається зі збереженим
+//паролем і false - якщо не збігається
+// function savePassword(password) {
+//   return function newPas() {
+//     const askPas = prompt("Enter your password!");
+//     return askPas === password;
+//   };
+// }
+// const password = savePassword("qwerty"); // Зберігажмо пароль
+// console.log(password());
+//TODO:  на this ✅==============================================
+//Виправте помилки, щоб код працював
+
+function callAction(action) {
+  action();
+}
+
+const item = {
+  getQuatity() {
+    console.log(this.quantity);
+  },
+  quantity: 5,
+};
+
+callAction(item.getQuatity.bind(item));
+
+//TODO: № 3  ✅ ==============================================
+//Виправте помилки, щоб код працював
+const product = {
+  price: 5000,
+  showPrice() {
+    console.log(this.price);
+  },
+};
+product.showPrice();
