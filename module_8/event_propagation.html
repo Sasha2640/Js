@@ -4,9 +4,144 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./module_8.css" />
   </head>
   <body>
+    <div id="parent">
+      PARENT
+      <div id="child">
+        CHILD
+        <div id="inner-child">INNER-CHILD</div>
+      </div>
+    </div>
+    <div id="parent">
+      PARENT
+      <div id="child">
+        CHILD
+        <div id="inner-child">INNER-CHILD</div>
+      </div>
+    </div>
+    <div id="parent">
+      PARENT
+      <div id="child">
+        CHILD
+        <div id="inner-child">INNER-CHILD</div>
+      </div>
+    </div>
+    <div id="parent">
+      PARENT
+      <div id="child">
+        CHILD
+        <div id="inner-child">INNER-CHILD</div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <ul class="nav js-nav" data-aos="zoom-out-down">
+      <li>
+        <a href="#" class="btn">HTML <i class="fa-solid fa-face-smile"></i></a>
+      </li>
+      <li>
+        <a href="#" class="btn">CSS <i class="fa-regular fa-thumbs-up"></i></a>
+      </li>
+      <li>
+        <a href="#" class="btn"
+          >JavaScript <i class="fa-solid fa-comment"></i
+        ></a>
+      </li>
+      <li>
+        <a href="#" class="btn">NPM <i class="fa-thin fa-comment"></i></a>
+      </li>
+      <li><a href="#" class="btn">Babel</a></li>
+      <li><a href="#" class="btn">Webpack</a></li>
+      <li><a href="#" class="btn">React</a></li>
+      <li><a href="#" class="btn">Redux</a></li>
+      <li>
+        <a href="#" class="btn animate__animated animate__heartBeat">NodeJS</a>
+      </li>
+    </ul>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">А за деревом...</div>
+        <div class="swiper-slide">деееревооо...</div>
+        <div class="swiper-slide">А за деревом...</div>
+        <div class="swiper-slide">деееревооо...</div>
+        <div class="swiper-slide">А за деревом...</div>
+        <div class="swiper-slide">деееревооо...</div>
+        <div class="swiper-slide">А за деревом...кущь</div>
+        <div class="swiper-slide">Стоп кінець ну будь ласка</div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p class="cta">Scroll me</p>
+
+    <div class="event-counter">
+      <div class="box">
+        <p>No timing function</p>
+        <span class="output vanilla">0</span>
+      </div>
+
+      <div class="box">
+        <p>Throttled</p>
+        <span class="output throttled">0</span>
+      </div>
+      <div class="box">
+        <p>Debounced</p>
+        <span class="output debounced">0</span>
+      </div>
+    </div>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script type="module" src="./event_propagation.js"></script>
   </body>
 </html>
